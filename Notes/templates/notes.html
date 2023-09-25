@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Notes
+{% endblock %}
+
+{% block content %}
+<h1 align="center">All Notes</h1>
+<ul class="list-group list-group-flush" id="notes">
+    {% for note in notes %}
+    <li class="list-group-item">
+      {{ note[1] }}
+      <br/>
+      {{ note[2] }}
+      <a href="/notes/delete/{{ note[0] }}" class="btn btn-danger btn-sm">Delete</a>
+    
+    
+    </li>
+    {% endfor %}
+  </ul>
+{% endblock %}
